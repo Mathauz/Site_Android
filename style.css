@@ -1,12 +1,47 @@
-@charset "UTF -8";
+@charset "UTF -8"; 
+/*Formtação para que todas as pontuações sejam adicionadas corretamente*/
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); 
+/*Usando as Fontes do Google fontes:
+- acessar: https://fonts.google.com/?sort=popularity , escolher a fonte clicando nela, clicar em 'obter fonte', 'obetenha o código de incorporação' - pode usar como link no html ou recomendado: Usar na pagina de CSS, escolher @import, copiar o código que está dentro da tag <style> ex: 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); 
+-Colocando logo após a config: @charset "UTF -8"; no começo da página de CSS. 
+-Depois só adicionar na tag como o nome da fonte, ex: font-family: 'Bebas Neue';
+-Fontes interessantes: 
+-Rubik(Titulos, frases grandes)
+-Sarabun(Titulos, frases grandes,Paragrafos,frases pequenas)
+-Poppins(Paragrafos,frases pequenas)
+-Roboto(Paragrafos,frases pequenas)*/
 
 @font-face {
     font-family: 'Android';
     src: url(fontes/idroid.otf) format('opentype');
     font-weight: normal;
+} 
+/*Baixando Fontes para usar nos projetos:
+-Acessar site de fontes, recomendada: 
+https://www.dafont.com/pt/
+- Baixar a fonte, vai me dar um arquivo .ttf ou .otf.
+-Colocar esses arquivos(podem vim os dois ou só 1) na pasta(arquivo) do projeto, e adicionando a seguinte configuração:
+@font-face {
+font-family: 'Nome que escolher pra fonte';
+src: url(local onde está a fonte, se estiver em uma pasta, recomendado fazer em pasta separada, ou colocar o nome da fonte que vem no arquivo baixado) format('opentype' - se for arquivo .otf
+'truetype'-se for arquivo .ttf);
+font-weight: normal;
+font-style: normal;
 }
+- ex:  
+@font-face {
+font-family: 'Android';
+src: url(fontes/idroid.otf) format('opentype');
+font-weight: normal;
+}
+-Colocando logo após a config: @charset "UTF -8"; no começo da página de CSS também.
+-Depois só adicionar tabém na tag com o nome da fonte, ex: font-family: 'Android';
+-Pode usar fontes baixadas e as do google juntas também.
+Capturar fontes de outros sites:
+-Usar a extensão fontninja.*/
+
 /*
 #c5ebd6
 #83e1ad
@@ -14,7 +49,88 @@
 #2fa866
 #1a5c37
 #063d1e
+
+Acessar o Adobe color - https://color.adobe.com/pt/ - para ver as paletas com as cores que eu for usar de acordo com os projetos. 
+
+Ou usar a extensão ColorZilla quando ver as cores de um site que eu achar interessante interessante.
 */
+/*
+Sobre as cores:
+-background-color: - Uma ùnica cor de fundo.
+-background-image: linear-gradient(to bottom, to right, to left,etc); - Cor de fundo com degradê, pode colocar várias cores/paleta de cores.
+-color: - Cor da letra.
+
+/////////////////////////////////////////////////////////////
+
+Sobre as Fontes: 
+font-family: 
+- Selecionar qual tipo de fonte usar no local selecionado na CSS:
+- padrão para {Body}: Arial, helvetica, sans-serif;
+- padrão para Titulos {H1-h3}: 'Times New Roman', Times, serif;
+
+font-size:
+- Medidas Absolutas, usar somente o: px - '5px' e etc.
+- Medidas Relativas, usar somente o: em - '3em' e etc.
+- font-size: 16px é o tamanho da fonte normal, sem formatação. 
+- 1em é esse mesmo valor em medida relativa. 2em seria 32px.
+
+font-weight:
+- È o peso da fonte. Bold-Negrito/ Bolder-Negrito mais forte/ lighter - leve/ normal. Pode colocar peso em números também,200,300.
+- Só funciona em algumas fontes.
+
+font-style:
+- È o estilo da fonte, Italico,etc.
+- Só funciona em algumas fontes. 
+
+text-decoration: 
+- È a decoração do texto, fonte. Pode ser colocado uma linha embaixo(sublinhado) por exemplo ou pedir pra tirar e etc.
+- Só funciona em algumas fontes.
+
+Shorthand font: 
+-Dá pra resumir as 4 config principais de uma só vez com este comando, só colocar na seguinte ordem: 
+- font: font-style-font-weight-font-size-font-family - ex: 
+(font: italic bolder 3em 'work Sans', sans-serif;)
+
+Alinhamento dos textos no paragrafo, titulos, e etc:
+comandos usados: 
+-text-align: center;(centro),right;(direita),left;(a esquerda);
+-text-indent: 30px;(Aquele espaço de começo de paragrafo, geralmente se usa 30px)
+
+/////////////////////////////////////////////////////////////
+
+Seletores, Id e class no HTML/CSS:
+# = Id(Só 1 vez, para algo especifico)
+. = Class(várias vezes e para a mesma formatação ao mesmo tempo em todos com o seletor .
+-Dar nome sempre a funçionalidade do Id ou class.
+Pode misturar mais de um id ou class juntos, ou repetir o mesmo elemento mais de uma vez. Id sempre se sobresai.
+-Sempre configurar os elementos genericos, depois vim com os id e class. O ultimo é o que vale.
+
+/////////////////////////////////////////////////////////////
+
+Pseudo-classes HTML/CSS:
+Configura o estado de uma classe. São várias opçoes.
+1 vez :(1 vez dois pontos)
+ex: 
+div:hover - Quando eu passo o mouse por cima o elemento dentro da tag fica com as seguintes caracteristicas: {
+    background-color: yellow;
+}
+div > p -  o elemento p(filho) dentro da tag div(p é filho da div) ficará com as seguintes caracteristicas: {
+    display: none; (oculta/esconde o paragráfo)
+}
+Ele só altera os elementos que está dentro da tag escolhida, só colocar a tag e o elemento que quer ser customizado com o sinal de >
+
+/////////////////////////////////////////////////////////////
+
+Pseudo-elementos HTML/CSS:
+Configura o estado de um elemento. São várias opçoes.
+2 vezes ::(2 vezes dois pontos)
+ex:
+a::after - Depois de clicar no link, aparece uma mensagem dizendo que aquele link é um link {
+    content: '[Link]';
+}
+
+/////////////////////////////////////////////////////////////
+*/  
 
 :root {
     --cor0:#c5ebd6;
@@ -23,16 +139,15 @@
     --cor3:#2fa866;
     --cor4:#1a5c37;
     --cor5:#063d1e;
-
     --fonte-padrao: arial, verdana, helvetica, sans-serif;
     --fonte-destaque: "Bebas Neue", sans-serif;
     --font-android: 'Android', sans-serif;
-}
+} /*Pseudo-classe com variáveis de todas as cores que vamos usar da palete de cores e as fontes. Sempre fazer isso no inicio dos projetos.*/
 
 *{
 margin: 0px;
 padding: 0px; 
-}
+} /*È um seletor global, para Todos os elementos ficarem sem margim e sem espaço, fazer sempre isso, pra começar a configuração corretamente do site, etc.*/
 
 body {
     background-color: var(--cor0);
@@ -116,7 +231,7 @@ nav > a {
 nav > a:hover {
     background-color: var(--cor3);
     color: var(--cor5);
-}
+}/*Quando eu passo o mouse por cima o elemento link dentro da tag nav fica com as seguintes caracteristicas: */ 
 
 main {
     background-color: white;
@@ -128,17 +243,17 @@ main {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+}/*tudo que está na main, a primeira config a ser feita*/
 
 main img {
 width: 100%;
-}
+}/*todas as imagens grandes que estão na main, terão 100% de uso,só acertar depois. que está na main*/
 
 main img.pequena{
 max-width: 350px;
 display: block;
 margin: auto;
-}
+}/*config da imagem do android com o humano,pois a imagem é pequena de má qualidade*/
 
 main h1 {
     color: var(--cor5);
